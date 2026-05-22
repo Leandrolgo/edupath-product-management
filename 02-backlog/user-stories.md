@@ -1,90 +1,80 @@
-# 📋 User Stories & Critérios de Aceite — EduPath
+# 🗂️ Backlog do Produto (User Stories) — EduPath
 
-Este documento contém o refinamento das Histórias de Utilizador que compõem o MVP e as primeiras versões do EduPath, mapeadas diretamente a partir do ClickUp.
-
----
-
-## 🏃‍♂️ Sprint 2 — Trilhas e Aprendizagem
-
-> **Objetivo da Sprint:** Entregar a criação, publicação e atribuição de trilhas de aprendizagem, além da experiência móvel inicial de navegação.
-
-*(Arraste aqui a sua imagem `image_359c4c.png` para mostrar o board do ClickUp da Sprint 2)*
-
-### ED-12 / Story 20 — Acessar plataforma pelo smartphone
-* **Como** Aluno (Carlos)
-* **Quero** aceder à plataforma EduPath diretamente através do navegador do meu smartphone
-* **Para** conseguir estudar os conteúdos das minhas trilhas em qualquer lugar.
-* **Critérios de Aceite:**
-  * O layout deve ser 100% responsivo (Mobile-First).
-  * O menu de navegação deve recolher para o formato "hambúrguer" em ecrãs menores que 768px.
-  * O tempo de carregamento da página inicial no mobile não deve passar de 3 segundos em redes 4G.
-
-### ED-13 / Story 5 — Criar trilha de aprendizagem
-* **Como** Coordenador Pedagógico / Gestor (Ricardo / Ana)
-* **Quero** criar uma nova trilha de aprendizagem definindo título e descrição
-* **Para** estruturar um novo plano de capacitação na plataforma.
-* **Critérios de Aceite:**
-  * Deve haver um botão visível "Criar Nova Trilha".
-  * Os campos "Título" (máx. 100 caracteres) e "Descrição" (máx. 500 caracteres) são obrigatórios.
-  * O sistema deve salvar a trilha com o status inicial "Rascunho".
-
-### ED-14 / Story 6 — Adicionar módulos à trilha
-* **Como** Coordenador Pedagógico / Gestor (Ricardo / Ana)
-* **Quero** adicionar e organizar múltiplos módulos ou aulas dentro de uma trilha
-* **Para** sequenciar o conteúdo didático de forma lógica.
-* **Critérios de Aceite:**
-  * Deve permitir adicionar links de vídeos, textos ou PDFs em cada módulo.
-  * Deve permitir reordenar os módulos através de arrastar e soltar (Drag and Drop).
-
-### ED-15 / Story 7 — Vincular trilha aos usuários
-* **Como** Coordenador Pedagógico / Gestor (Ricardo / Ana)
-* **Quero** associar uma trilha de aprendizagem a alunos específicos ou setores da empresa
-* **Para** direcionar o treinamento para o público correto.
-* **Critérios de Aceite:**
-  * Permitir a seleção de múltiplos utilizadores de uma lista.
-  * Permitir vincular por "Tags" ou "Setor" (ex: Setor Comercial).
-
-### ED-16 / Story 8 — Publicar trilha de aprendizagem
-* **Como** Coordenador Pedagógico / Gestor (Ricardo / Ana)
-* **Quero** mudar o status da trilha de "Rascunho" para "Publicada"
-* **Para** que ela fique imediatamente disponível para os alunos vinculados.
-* **Critérios de Aceite:**
-  * Só permite publicar se a trilha tiver pelo menos 1 módulo com conteúdo.
-  * Enviar uma notificação interna para todos os alunos vinculados após a publicação.
-
-### ED-17 / Story 21 — Continuar progresso em múltiplos dispositivos
-* **Como** Aluno (Carlos)
-* **Quero** que o meu progresso de leitura e vídeos seja salvo centralizadamente
-* **Para** retomar os estudos do ponto exato onde parei ao trocar de dispositivo.
-* **Critérios de Aceite:**
-  * O progresso do vídeo deve ser salvo a cada 5 segundos assistidos.
-  * Ao carregar a aula, o sistema deve ler o estado do banco e posicionar o utilizador no segundo correto.
+Este documento contém o Product Backlog do MVP do EduPath, refinado e priorizado utilizando a metodologia **MoSCoW** e dimensionado em **Story Points (SP)** utilizando a sequência de Fibonacci. Os critérios de aceitação seguem o padrão de especificação behavior-driven (**Gherkin**).
 
 ---
 
-## 🗓️ Sprint 3 — Progresso e Certificados
+### 🟢 ED-01: Autenticação de Utilizadores e Consentimento LGPD
+* **Prioridade:** 🔴 Must Have (Crítico para o lançamento)
+* **Esforço:** 5 Story Points
+* **Persona Alvo:** Carlos (Colaborador/Aluno) & Ana (Gestora de RH)
+* **Métrica de Impacto:** Segurança jurídica e Ativação de Usuários
 
-> **Objetivo da Sprint:** Entregar o acompanhamento de progresso em tempo real para os gestores e a emissão automatizada de certificados para os alunos concludentes.
+**História de Utilizador:**
+> **Como** utilizador da plataforma EduPath (Aluno ou Gestor),  
+> **Quero** realizar a autenticação segura utilizando e-mail corporativo/senha e aceitar explicitamente as políticas de privacidade,  
+> **Para que** eu possa acessar os meus dados de forma segura e em conformidade com as diretivas da LGPD/RGPD.
 
-*(Arraste aqui a sua imagem `image_359c86.png` para mostrar o backlog da Sprint 3)*
+**Critérios de Aceite:**
 
-* **ED-18 / Story 9:** Visualizar progresso individual (Visão do Aluno).
-* **ED-19 / Story 10:** Monitorizar desempenho da turma (Visão do Professor).
-* **ED-20 / Story 11:** Receber alertas de atraso (Automação de faltas).
-* **ED-21 / Story 12:** Visualizar histórico de atividades do aluno.
-* **ED-22 / Story 16:** Gerar certificado automático em PDF após conclusão de 100% da trilha.
-* **ED-23 / Story 17:** Visualizar histórico de certificados emitidos no perfil.
+* **Cenário 1: Autenticação com sucesso**
+  * **Dado** que o utilizador está na página de login do EduPath;
+  * **Quando** insere um e-mail válido e a senha correta cadastrada pela empresa;
+  * **E** clica no botão "Entrar";
+  * **Então** o sistema deve autenticar o utilizador e redirecioná-lo para a Dashboard correspondente ao seu perfil (Aluno ou Gestor).
+
+* **Cenário 2: Primeiro acesso e aceite da LGPD**
+  * **Dado** que é o primeiro login do colaborador Carlos na plataforma;
+  * **Quando** ele realiza a autenticação com sucesso;
+  * **Então** o sistema deve travar a tela e exibir o termo de consentimento de uso de dados (LGPD);
+  * **E** o botão "Continuar" só deve ser habilitado após ele marcar a caixa de seleção de aceite.
 
 ---
 
-## 🗓️ Sprint 4 — Dashboard, Relatórios e Comunicação
+### 🔵 ED-02: Criação de Trilhas de Aprendizagem Dinâmicas
+* **Prioridade:** 🔴 Must Have (Core Business do Produto)
+* **Esforço:** 8 Story Points
+* **Persona Alvo:** Ricardo (Professor/Coordenador)
+* **Métrica de Impacto:** Eficiência Operacional (Redução do tempo de criação de cursos)
 
-> **Objetivo da Sprint:** Fornecer dashboards executivos e pedagógicos consolidados, geração de relatórios exportáveis e canais de feedback entre tutores e alunos.
+**História de Utilizador:**
+> **Como** coordenador pedagógico ou criador de conteúdos,  
+> **Quero** criar trilhas de aprendizagem compostas por módulos sequenciais, vídeos e artigos,  
+> **Para que** eu possa estruturar treinamentos corporativos de forma modular e ágil.
 
-*(Arraste aqui a sua imagem `image_359caa.png` para mostrar o backlog da Sprint 4)*
+**Critérios de Aceite:**
 
-* **ED-24 / Story 13:** Visualizar dashboard pedagógico com taxas de engajamento da turma.
-* **ED-25 / Story 14:** Visualizar KPIs de treinamento (Tempo gasto, ROI, Notas).
-* **ED-26 / Story 15:** Exportar relatórios consolidados em formatos CSV/Excel.
-* **ED-27 / Story 18:** Receber notificações automáticas no sistema e e-mail.
-* **ED-28 / Story 19:** Canal de comunicação direta (mensagens) entre professor e aluno.
+* **Cenário 1: Criação de estrutura de curso vazia**
+  * **Dado** que o professor Ricardo está autenticado com o perfil administrativo;
+  * **Quando** acede à área "Criar Trilha" e insere um título, descrição e imagem de capa;
+  * **Então** o sistema deve salvar o rascunho do curso e habilitar o botão de "Adicionar Módulos".
+
+* **Cenário 2: Ordenação sequencial obrigatória**
+  * **Dado** que o Ricardo adicionou três módulos à trilha;
+  * **Quando** ele marca a opção "Sequência Obrigatória";
+  * **Então** o sistema deve impedir que o aluno Carlos assista ao Módulo 2 sem ter completado 100% do Módulo 1.
+
+---
+
+### 🟡 ED-03: Dashboard Analítica de Performance Corporativa
+* **Prioridade:** 🟡 Should Have (Diferencial de Negócio)
+* **Esforço:** 8 Story Points
+* **Persona Alvo:** Ana (Gestora de RH)
+* **Métrica de Impacto:** Retenção de Clientes B2B e Engajamento de Turmas
+
+**História de Utilizador:**
+> **Como** gestora de RH de uma empresa parceira,  
+> **Quero** visualizar uma dashboard consolidada com indicadores de progresso, taxas de conclusão e tempo médio de estudo dos colaboradores,  
+> **Para que** eu possa metrificar o ROI do investimento em treinamento e intervir em setores com baixa adesão.
+
+**Critérios de Aceite:**
+
+* **Cenário 1: Filtro de dados por departamento**
+  * **Dado** que a gestora Ana está na tela inicial de relatórios;
+  * **Quando** seleciona o filtro por "Departamento: Operações";
+  * **Então** os gráficos de pizza e barras devem recalcular instantaneamente para exibir apenas as métricas de conclusão dos colaboradores daquele setor.
+
+* **Cenário 2: Exportação de relatório consolidado**
+  * **Dado** que a Ana precisa enviar os dados para a diretoria;
+  * **Quando** ela clica no botão "Exportar PDF";
+  * **Então** o sistema deve gerar um arquivo estruturado contendo o resumo executivo dos indicadores selecionados na tela em menos de 5 segundos.
