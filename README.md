@@ -1,3 +1,5 @@
+# EduPath 👥
+
 > **Status do Projeto:** 🚀 MVP em Desenvolvimento / Planeamento de Integrações e IA  
 > **Product Owner:** [Leandro Gasparello](https://linkedin.com/in/leandrogasparello)
 
@@ -10,7 +12,8 @@ O **EduPath** é uma plataforma de EdTech focada em aprendizagem personalizada e
 Clique nos links abaixo para explorar a documentação oficial de gestão de produto do EduPath, organizada por etapas do ciclo de vida de desenvolvimento:
 
 ### 🎯 [01. Product Discovery](./01-product-discovery/)
-* [Product Vision & Proposta de Valor](./01-product-discovery/product-vision.md) — Alinhamento estratégico e objetivos de negócio.
+* [Product Vision & Proposta de Valor](./01-product-discovery/product-vision.md) — Alinhamento estratégico e pilares do produto.
+* [Elevator Pitch](./01-product-discovery/elevator-pitch.md) — Matriz de posicionamento de mercado.
 * [Personas do Produto](./01-product-discovery/personas.md) — Perfis detalhados dos utilizadores (Ricardo, Ana e Carlos).
 * [Jornada do Utilizador](./01-product-discovery/user-journey.md) — Mapeamento da experiência ponta a ponta.
 
