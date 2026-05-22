@@ -19,7 +19,8 @@ Clique nos links abaixo para explorar a documentação oficial de gestão de pro
 
 ### 🗂️ [02. Backlog do Produto](./02-backlog/)
 * [User Stories & Critérios de Aceite](./02-backlog/user-stories.md) — Backlog detalhado e refinado para engenharia.
-* [Acordos de Qualidade (DoR / DoD)](./02-backlog/definition-of-ready.md) — Definição de Pronto para Desenvolvimento e Concluído.
+* [Definition of Ready (DoR)](./02-backlog/definition-of-ready.md) — Acordo de qualidade para entrada em desenvolvimento.
+* [Definition of Done (DoD)](./02-backlog/definition-of-done.md) — Critérios de validação e homologação para subida a produção.
 
 ### 🗺️ [03. Planeamento Estratégico](./03-roadmap/)
 * [Product Roadmap (18 Meses)](./03-roadmap/product-roadmap.md) — Evolução planeada em 4 fases incrementais.
